@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIP Perfumes - Tu Esencia, Tu Mejor Regalo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #FFFFFF;
+            --color-secondary: #FAF9F6;
+            --color-accent: #A6791E;
+            --color-accent-alt: #DBA7A1;
+            --color-accent-green: #6E7C59;
+            --color-text: #1A1A1A;
+            --color-light: #5A5A5A;
+            --color-light-gray: #F0EEE9;
+            --shadow-sm: 0 2px 10px rgba(0,0,0,0.06);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.09);
+            --shadow-lg: 0 20px 48px rgba(0,0,0,0.14);
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 40px;
+            --spacing-xl: 60px;
+            --font-title: 'Cinzel', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-primary);
+            line-height: 1.7;
+        }
+
+        /* Header */
+        header {
+            background-color: #FFFFFF;
+            border-bottom: 1px solid var(--color-light-gray);
+            box-shadow: var(--shadow-sm);
+            padding: var(--spacing-md) 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            text-decoration: none;
+            font-family: var(--font-title);
+        }
+
+        .logo .logo-perfumes {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            color: var(--color-text);
+        }
+
+        .logo .logo-vip {
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--color-accent);
+            white-space: nowrap;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 11px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: color 0.4s ease;
+            position: relative;
+            font-family: var(--font-body);
+        }
+
+        nav a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: radial-gradient(circle at 15% 20%, rgba(166,121,30,0.07) 0%, transparent 45%),
+                        radial-gradient(circle at 85% 80%, rgba(166,121,30,0.06) 0%, transparent 50%),
+                        #FFFFFF;
+            box-shadow: inset 0 -30px 40px -35px rgba(0,0,0,0.12);
+            padding: 100px var(--spacing-lg);
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            min-height: 560px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 72px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 3px;
+            font-family: var(--font-title);
+            color: var(--color-text);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--color-light);
+            margin-bottom: var(--spacing-lg);
+            font-weight: 300;
+            letter-spacing: 2px;
+            line-height: 1.8;
+            font-family: var(--font-body);
+        }
+
+        /* Search and Filter */
+        .controls {
+            max-width: 1400px;
+            margin: var(--spacing-lg) auto var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-light-gray);
+            box-shadow: var(--shadow-md);
+            border-radius: 0;
+            display: flex;
+            gap: var(--spacing-lg);
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E2DDD1;
+            border-radius: 0;
+            background-color: #FFFFFF;
+            font-size: 13px;
+            font-family: var(--font-body);
+            color: var(--color-text);
+            transition: all 0.4s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .search-box input::placeholder {
+            color: rgba(0, 0, 0, 0.4);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background-color: #FFFDF7;
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 0;
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+            border-radius: 0;
+            font-size: 11px;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.55);
+            position: relative;
+            padding-bottom: 8px;
+            border-bottom: 2px solid transparent;
+            font-family: var(--font-body);
+        }
+
+        .filter-btn:hover {
+            color: var(--color-accent);
+        }
+
+        .filter-btn.active {
+            color: var(--color-accent);
+            border-bottom-color: var(--color-accent);
+        }
+
+        /* Filtro de Precio */
+        .price-filter {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .price-filter label {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+            color: rgba(0, 0, 0, 0.65);
+            font-weight: 500;
+            font-family: var(--font-body);
+        }
+
+        .price-inputs {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .price-input {
+            width: 80px;
+            padding: 8px 10px;
+            border: 1px solid #E2DDD1;
+            border-radius: 0;
+            background-color: #FFFFFF;
+            font-size: 12px;
+            font-family: var(--font-body);
+            color: var(--color-text);
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .price-input::placeholder {
+            color: rgba(0, 0, 0, 0.35);
+        }
+
+        .price-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            background-color: #FFFDF7;
+        }
+
+        .price-separator {
+            color: rgba(0, 0, 0, 0.4);
+            font-size: 13px;
+        }
+
+        /* Productos Grid */
+        .productos-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-lg);
+        }
+
+        .productos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .producto-card {
+            background: #FFFFFF;
+            border: 1px solid var(--color-light-gray);
+            border-radius: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .producto-card:hover {
+            border-color: var(--color-light-gray);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+        }
+
+        .producto-imagen {
+            width: 100%;
+            height: 340px;
+            background: linear-gradient(135deg, #F7F5F0 0%, #EFEBE2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9A9A9A;
+            font-size: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .producto-imagen::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(166,121,30,0.04) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .producto-imagen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            position: relative;
+            z-index: 0;
+        }
+
+        .producto-card:hover .producto-imagen img {
+            transform: scale(1.05);
+        }
+
+        .producto-info {
+            padding: var(--spacing-lg);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid var(--color-light-gray);
+        }
+
+        .producto-titulo {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--color-text);
+            letter-spacing: 1px;
+            font-family: var(--font-title);
+        }
+
+        .producto-notas {
+            font-size: 11px;
+            color: var(--color-light);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+        }
+
+        .producto-footer {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: var(--spacing-md);
+            border-top: 1px solid var(--color-light-gray);
+        }
+
+        .producto-precio {
+            text-align: left;
+        }
+
+        .producto-whatsapp {
+            text-align: center;
+            width: 100%;
+        }
+
+        .producto-precio {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--color-text);
+            letter-spacing: 0.5px;
+            font-family: var(--font-title);
+        }
+
+        .producto-disponibilidad {
+            font-size: 10px;
+            padding: 10px 14px;
+            background-color: transparent;
+            border-radius: 0;
+            color: var(--color-accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid var(--color-accent);
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .producto-disponibilidad:hover {
+            background-color: var(--color-accent);
+            color: #FFFFFF;
+        }
+
+        /* Mensajes */
+        .no-resultados {
+            text-align: center;
+            padding: var(--spacing-xl);
+            color: rgba(0, 0, 0, 0.5);
+            font-family: var(--font-body);
+        }
+
+        .no-resultados p {
+            font-size: 16px;
+            margin-bottom: var(--spacing-md);
+            letter-spacing: 0.5px;
+            color: rgba(0, 0, 0, 0.6);
+        }
+
+        .no-resultados p:last-child {
+            font-size: 12px;
+            color: rgba(0, 0, 0, 0.4);
+            letter-spacing: 0.5px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-secondary);
+            color: var(--color-text);
+            padding: var(--spacing-xl) var(--spacing-lg);
+            margin-top: var(--spacing-xl);
+            box-shadow: 0 -10px 30px -20px rgba(0,0,0,0.18);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .footer-section h3 {
+            font-size: 13px;
+            margin-bottom: var(--spacing-lg);
+            letter-spacing: 2px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            font-family: var(--font-title);
+        }
+
+        .footer-section p {
+            font-size: 12px;
+            color: var(--color-light);
+            line-height: 1.8;
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: var(--spacing-md);
+            font-size: 12px;
+            color: var(--color-light);
+        }
+
+        .footer-section a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: 12px;
+            transition: color 0.4s ease;
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+        }
+
+        .footer-section a:hover {
+            color: var(--color-text);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--color-light-gray);
+            padding-top: var(--spacing-lg);
+            text-align: center;
+            font-size: 11px;
+            color: rgba(0, 0, 0, 0.45);
+            letter-spacing: 0.5px;
+            font-family: var(--font-body);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            :root {
+                --spacing-lg: 24px;
+                --spacing-xl: 40px;
+            }
+
+            .hero {
+                min-height: 450px;
+                padding: 60px var(--spacing-lg);
+            }
+
+            .hero h1 {
+                font-size: 52px;
+            }
+
+            .productos-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: var(--spacing-md);
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: stretch;
+                gap: var(--spacing-md);
+            }
+
+            .search-box {
+                min-width: unset;
+            }
+
+            .filter-group {
+                width: 100%;
+                gap: 20px;
+            }
+
+            nav {
+                gap: 20px;
+            }
+
+            nav a {
+                font-size: 10px;
+            }
+
+            .producto-imagen {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing-lg: 16px;
+                --spacing-xl: 32px;
+            }
+
+            .header-container {
+                padding: 0 var(--spacing-md);
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+
+            .logo {
+                font-size: 20px;
+                letter-spacing: 2px;
+            }
+
+            .hero {
+                min-height: 350px;
+                padding: 40px var(--spacing-md);
+            }
+
+            .hero h1 {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .productos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .producto-imagen {
+                height: 250px;
+            }
+
+            .controls {
+                padding: var(--spacing-md);
+                flex-direction: column;
+                gap: var(--spacing-sm);
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            nav a {
+                font-size: 9px;
+                letter-spacing: 0.8px;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: var(--spacing-lg);
+            }
+
+            .producto-info {
+                padding: var(--spacing-md);
+            }
+
+            .footer-bottom {
+                padding-bottom: 80px;
+            }
+        }
+
+        /* Banner de envíos */
+        .envios-banner {
+            max-width: 1400px;
+            margin: 0 auto var(--spacing-xl);
+            padding: var(--spacing-md) var(--spacing-lg);
+            background-color: #FFFFFF;
+            border: 1px solid var(--color-light-gray);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            font-family: var(--font-body);
+            letter-spacing: 0.3px;
+        }
+
+        .envios-banner p {
+            font-size: 13px;
+            color: var(--color-text);
+            line-height: 1.7;
+        }
+
+        .envios-banner strong {
+            color: var(--color-accent);
+        }
+
+        .envios-banner a {
+            color: var(--color-accent);
+            text-decoration: underline;
+        }
+
+        /* Botón flotante de WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 200;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.28);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.08);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .producto-whatsapp {
+            font-size: 10px;
+            padding: 10px 14px;
+            background-color: #25D366;
+            border-radius: 0;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 2px solid #25D366;
+            font-family: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .producto-whatsapp:hover {
+            background-color: transparent;
+            color: #1FAE55;
+            border-color: #1FAE55;
+        }
+
+        @media (max-width: 480px) {
+            .whatsapp-float {
+                bottom: 16px;
+                right: 16px;
+                width: 52px;
+                height: 52px;
+            }
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <span class="logo-perfumes">PERFUMES</span>
+                <span class="logo-vip">VIP</span>
+            </a>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#catalogo">Catálogo</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>PERFUMES <span style="color: var(--color-accent);">VIP</span></h1>
+            <p>Tu Esencia, Tu Mejor Regalo</p>
+        </div>
+    </section>
+
+    <!-- Banner de envíos -->
+    <div class="envios-banner">
+        <p>🏍️ <strong>Entregas en toda la Zona Metropolitana de Guadalajara</strong> vía motoenvío. El costo depende de tu ubicación y se cotiza directo por
+            <a href="https://wa.me/523316025076?text=Hola%2C%20quiero%20cotizar%20el%20env%C3%ADo%20de%20un%20perfume%20a%20mi%20domicilio%20en%20la%20ZMG" target="_blank" rel="noopener">WhatsApp</a>.</p>
+    </div>
+
+    <!-- Controles de búsqueda y filtro -->
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="busqueda" placeholder="Buscar por nombre, aroma...">
+        </div>
+
+        <div class="price-filter">
+            <label>Rango de Precio:</label>
+            <div class="price-inputs">
+                <input type="number" id="precioMin" class="price-input" placeholder="Min" min="0" value="0">
+                <span class="price-separator">—</span>
+                <input type="number" id="precioMax" class="price-input" placeholder="Max" min="0" value="10000">
+            </div>
+        </div>
+    </div>
+
+    <!-- Grid de Productos -->
+    <div class="productos-container" id="catalogo">
+        <div class="productos-grid" id="productosGrid">
+            <!-- Los productos se cargarán aquí con JavaScript -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>VIP Perfumes</h3>
+                <p>Fragancias originales a precios más accesibles. Entregamos en toda la Zona Metropolitana de Guadalajara vía motoenvío; el costo se cotiza según tu ubicación.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Características</h3>
+                <ul>
+                    <li>✓ Perfumes 100% Originales</li>
+                    <li>✓ Precios VIP</li>
+                    <li>✓ Entrega Rápida</li>
+                    <li>✓ Atención Personalizada</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Envíos</h3>
+                <ul>
+                    <li>Zona Metropolitana de Guadalajara</li>
+                    <li>Entrega por motoenvío</li>
+                    <li>Costo según ubicación (se cotiza por WhatsApp)</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <ul>
+                    <!-- TODO: reemplaza con tu correo real -->
+                    <li><a href="mailto:contact@vipperfumes.com">contact@vipperfumes.com</a></li>
+                    <!-- TODO: reemplaza con tu teléfono real -->
+                    <li><a href="tel:+5216121234567">+52 612 123 4567</a></li>
+                    <li style="margin-top: var(--spacing-lg);">
+                        <!-- TODO: agrega tu usuario de Instagram -->
+                        <a href="#" target="_blank" rel="noopener">Instagram</a> — <a href="https://wa.me/523316025076?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20perfumes" target="_blank" rel="noopener">WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VIP Perfumes. Lujo que se siente, precio que se agradece.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Tu catálogo de PERFUMES VIP
+        const productos = [
+            {
+                id: 1,
+                nombre: "Nautica Blue",
+                notas: "Fresco, Marino, Cítrico",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/nautica_blue.jpg"
+            },
+            {
+                id: 2,
+                nombre: "Nautica Voyage",
+                notas: "Fresco, Acuático, Maderado",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/nautica_voyage.jpg"
+            },
+            {
+                id: 3,
+                nombre: "Nautica Classic",
+                notas: "Fresco, Marino, Amaderado",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/nautica_classic.jpg"
+            },
+            {
+                id: 4,
+                nombre: "Calvin Klein CK One",
+                notas: "Fresco, Cítrico, Floral",
+                precioNumerico: 1450,
+                precio: "$1,450",
+                disponible: true,
+                imagen: "images/ck one calvin klein"
+            },
+            {
+                id: 5,
+                nombre: "Perry Ellis Pure Blue Perfume + 2 Cremas",
+                notas: "Fresco, Acuático, Amaderado",
+                precioNumerico: 1600,
+                precio: "$1,600",
+                disponible: true,
+                imagen: "images/perry_ellis_pure_blue.jpg"
+            },
+            {
+                id: 6,
+                nombre: "Rabanne Invictus Parfum",
+                notas: "Especiado, Amaderado, Ámbar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/rabanne_invictus_parfum.jpg"
+            },
+            {
+                id: 7,
+                nombre: "Moschino Cheap & Chic",
+                notas: "Frutal, Floral, Almizcar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/Moschino Cheap & Chic.avif"
+            },
+            {
+                id: 8,
+                nombre: "Hugo Boss Hugo Extreme",
+                notas: "Especiado, Amaderado, Ámbar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/hugo_boss_extreme.jpg"
+            },
+            {
+                id: 9,
+                nombre: "Marc Jacobs Daisy Eau So Fresh",
+                notas: "Frutal, Floral, Fresco",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/marc_jacobs_daisy_eau_so_fresh.jpg"
+            },
+            {
+                id: 10,
+                nombre: "Ariana Grande Cloud",
+                notas: "Frutal, Vainilla, Almizcar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/ariana_grande_cloud.jpg"
+            },
+            {
+                id: 11,
+                nombre: "Grès Cabotine",
+                notas: "Floral, Frutal, Fresco",
+                precioNumerico: 1400,
+                precio: "$1,400",
+                disponible: true,
+                imagen: "images/gres_cabotine.jpg"
+            },
+            {
+                id: 12,
+                nombre: "Moschino Toy 2 Bubble Gum",
+                notas: "Frutal, Floral, Caramelo",
+                precioNumerico: 2100,
+                precio: "$2,100",
+                disponible: true,
+                imagen: "images/Moschino Toy 2 Bubble Gum.avif"
+            },
+            {
+                id: 13,
+                nombre: "Hugo Boss Bottled Unlimited",
+                notas: "Especiado, Amaderado, Ámbar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/hugo_boss_bottled_unlimited.jpg"
+            },
+            {
+                id: 14,
+                nombre: "Valentino Voce Viva",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/Valentino Voce Viva.avif"
+            },
+            {
+                id: 15,
+                nombre: "Dolce & Gabbana K (set)",
+                notas: "Especiado, Amaderado, Ámbar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/Dolce & Gabbana K (set).avif"
+            },
+            {
+                id: 16,
+                nombre: "Carolina Herrera 212 Men Heroes",
+                notas: "Especiado, Amaderado, Ámbar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/Carolina Herrera 212 Men Heroes.avif"
+            },
+            {
+                id: 17,
+                nombre: "Perry Ellis 360° for Women",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 1480,
+                precio: "$1,480",
+                disponible: true,
+                imagen: "images/perry_ellis_360_women.jpg"
+            },
+            {
+                id: 18,
+                nombre: "Versace Bright Crystal",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 2200,
+                precio: "$2,200",
+                disponible: true,
+                imagen: "images/versace_bright_crystal.jpg"
+            },
+            {
+                id: 19,
+                nombre: "Jimmy Choo Eau de Parfum",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 1960,
+                precio: "$1,960",
+                disponible: true,
+                imagen: "images/jimmy_choo_edp.jpg"
+            },
+            {
+                id: 20,
+                nombre: "Tommy Hilfiger Tommy Girl",
+                notas: "Floral, Frutal, Fresco",
+                precioNumerico: 1550,
+                precio: "$1,550",
+                disponible: true,
+                imagen: "images/tommy_girl.jpg"
+            },
+            {
+                id: 21,
+                nombre: "Cacharel Amor Amor",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 1700,
+                precio: "$1,700",
+                disponible: true,
+                imagen: "images/cacharel_amor_amor.jpg"
+            },
+            {
+                id: 22,
+                nombre: "Tommy Hilfiger Tommy Now Girl",
+                notas: "Floral, Frutal, Fresco",
+                precioNumerico: 1600,
+                precio: "$1,600",
+                disponible: true,
+                imagen: "images/tommy_now_girl.jpg"
+            },
+            {
+                id: 23,
+                nombre: "Halloween de J. del Pozo",
+                notas: "Especiado, Floral, Ámbar",
+                precioNumerico: 1650,
+                precio: "$1,650",
+                disponible: true,
+                imagen: "images/halloween_jdelpozo.jpg"
+            },
+            {
+                id: 24,
+                nombre: "Narciso Rodriguez For Her",
+                notas: "Floral, Amaderado, Almizcar",
+                precioNumerico: 2500,
+                precio: "$2,500",
+                disponible: true,
+                imagen: "images/narciso_rodriguez_for_her.jpg"
+            },
+            {
+                id: 25,
+                nombre: "Davidoff Cool Water Woman",
+                notas: "Fresco, Acuático, Floral",
+                precioNumerico: 1450,
+                precio: "$1,450",
+                disponible: true,
+                imagen: "images/davidoff_cool_water_woman.jpg"
+            },
+            {
+                id: 26,
+                nombre: "Carlo Corinto Femme",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 1600,
+                precio: "$1,600",
+                disponible: true,
+                imagen: "images/carlo_corinto_femme.jpg"
+            },
+            {
+                id: 27,
+                nombre: "Moschino Toy Boy",
+                notas: "Frutal, Especiado, Ámbar",
+                precioNumerico: 2200,
+                precio: "$2,200",
+                disponible: true,
+                imagen: "images/moschino_toy_boy.jpg"
+            },
+            {
+                id: 28,
+                nombre: "Perry Ellis 360° for Women (set)",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 1600,
+                precio: "$1,600",
+                disponible: true,
+                imagen: "images/perry_ellis_360_women.jpg"
+            },
+            {
+                id: 29,
+                nombre: "Perry Ellis Reserve for Women (gift set)",
+                notas: "Floral, Frutal, Almizcar",
+                precioNumerico: 0,
+                precio: "Consultar",
+                disponible: true,
+                imagen: "images/perry_ellis_reserve_women.jpg"
+            },
+            {
+                id: 30,
+                nombre: "Carolina Herrera Very Good Girl",
+                notas: "Floral, Frutal, Vainilla",
+                precioNumerico: 3200,
+                precio: "$3,200",
+                disponible: true,
+                imagen: "images/carolina_herrera_very_good_girl.jpg"
+            }
+        ];
+
+        let busquedaActual = '';
+        let precioMin = 0;
+        let precioMax = 10000;
+
+        function renderizarProductos(productosAMostrar) {
+            const grid = document.getElementById('productosGrid');
+
+            if (productosAMostrar.length === 0) {
+                grid.innerHTML = '<div class="no-resultados" style="grid-column: 1/-1;"><p>No se encontraron productos.</p><p style="font-size: 14px;">Intenta con otro término de búsqueda o filtro de precio.</p></div>';
+                return;
+            }
+
+            grid.innerHTML = productosAMostrar.map(producto => {
+                const mensaje = encodeURIComponent(`Hola, me interesa el perfume "${producto.nombre}"${producto.precioNumerico ? ' (' + producto.precio + ')' : ''}. ¿Me das más información y el costo de envío a mi domicilio en la ZMG?`);
+                return `
+                <div class="producto-card">
+                    <div class="producto-imagen">
+                        ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}">` : 'Imagen del Producto'}
+                    </div>
+                    <div class="producto-info">
+                        <h3 class="producto-titulo">${producto.nombre}</h3>
+                        <p class="producto-notas">${producto.notas}</p>
+                        <div class="producto-footer">
+                            <span class="producto-precio">${producto.precio}</span>
+                            <a href="https://wa.me/523316025076?text=${mensaje}" target="_blank" rel="noopener" class="producto-whatsapp">
+                                Pedir por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            }).join('');
+        }
+
+        function filtrarProductos() {
+            let productosFiltrados = productos;
+
+            // Filtrar por búsqueda
+            if (busquedaActual) {
+                const termino = busquedaActual.toLowerCase();
+                productosFiltrados = productosFiltrados.filter(p =>
+                    p.nombre.toLowerCase().includes(termino) ||
+                    p.notas.toLowerCase().includes(termino)
+                );
+            }
+
+            // Filtrar por precio
+            productosFiltrados = productosFiltrados.filter(p =>
+                p.precioNumerico >= precioMin && p.precioNumerico <= precioMax
+            );
+
+            renderizarProductos(productosFiltrados);
+        }
+
+        // Event Listeners
+        document.getElementById('busqueda').addEventListener('input', (e) => {
+            busquedaActual = e.target.value;
+            filtrarProductos();
+        });
+
+        document.getElementById('precioMin').addEventListener('input', (e) => {
+            precioMin = parseFloat(e.target.value) || 0;
+            filtrarProductos();
+        });
+
+        document.getElementById('precioMax').addEventListener('input', (e) => {
+            precioMax = parseFloat(e.target.value) || 10000;
+            filtrarProductos();
+        });
+
+        // Renderizar productos al cargar la página
+        renderizarProductos(productos);
+    </script>
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/523316025076?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20perfumes" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Escríbenos por WhatsApp">
+        <svg viewBox="0 0 32 32" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.394.7 4.62 1.908 6.494L4 29l7.71-1.878A11.94 11.94 0 0 0 16.001 27C22.628 27 28 21.627 28 15S22.628 3 16.001 3zm0 21.75a9.7 9.7 0 0 1-4.95-1.354l-.355-.21-4.575 1.115 1.156-4.46-.232-.366A9.72 9.72 0 0 1 5.25 15c0-5.936 4.815-10.75 10.751-10.75S26.75 9.064 26.75 15 21.938 24.75 16.001 24.75zm5.55-7.98c-.304-.152-1.797-.887-2.076-.988-.279-.101-.482-.152-.685.152-.203.304-.786.988-.964 1.19-.177.203-.355.228-.659.076-.304-.152-1.283-.473-2.444-1.51-.903-.805-1.513-1.8-1.69-2.104-.178-.304-.019-.468.133-.62.137-.136.304-.355.456-.532.152-.178.203-.304.304-.507.101-.203.05-.38-.025-.532-.076-.152-.685-1.652-.938-2.263-.247-.594-.499-.514-.685-.523l-.583-.01c-.203 0-.532.076-.81.38-.279.304-1.064 1.04-1.064 2.537 0 1.497 1.089 2.944 1.241 3.148.152.203 2.144 3.274 5.196 4.591.726.313 1.292.5 1.733.64.728.232 1.39.199 1.913.121.584-.087 1.797-.735 2.05-1.445.253-.71.253-1.318.177-1.445-.076-.127-.279-.203-.583-.355z"/>
+        </svg>
+    </a>
+</body>
+</html>
